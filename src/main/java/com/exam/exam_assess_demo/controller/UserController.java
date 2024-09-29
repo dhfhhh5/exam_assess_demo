@@ -1,10 +1,11 @@
 package com.exam.exam_assess_demo.controller;
 
 
-import com.exam.assess.pojo.PageBean;
-import com.exam.assess.pojo.Result;
-import com.exam.assess.pojo.User;
-import com.exam.assess.service.UserService;
+
+import com.exam.exam_assess_demo.pojo.PageBean;
+import com.exam.exam_assess_demo.pojo.Result;
+import com.exam.exam_assess_demo.pojo.User;
+import com.exam.exam_assess_demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

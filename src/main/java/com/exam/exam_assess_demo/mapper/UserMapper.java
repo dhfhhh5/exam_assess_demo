@@ -1,6 +1,6 @@
 package com.exam.exam_assess_demo.mapper;
 
-import com.exam.assess.pojo.User;
+import com.exam.exam_assess_demo.pojo.User;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;

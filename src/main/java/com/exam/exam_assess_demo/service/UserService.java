@@ -1,7 +1,8 @@
 package com.exam.exam_assess_demo.service;
 
-import com.exam.assess.pojo.PageBean;
-import com.exam.assess.pojo.User;
+
+import com.exam.exam_assess_demo.pojo.PageBean;
+import com.exam.exam_assess_demo.pojo.User;
 
 public interface UserService {
 

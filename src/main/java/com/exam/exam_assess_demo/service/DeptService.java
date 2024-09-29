@@ -1,7 +1,8 @@
 package com.exam.exam_assess_demo.service;
 
-import com.exam.assess.pojo.Dept;
-import com.exam.assess.pojo.PageBean;
+
+import com.exam.exam_assess_demo.pojo.Dept;
+import com.exam.exam_assess_demo.pojo.PageBean;
 
 public interface DeptService {
 
@@ -13,5 +14,5 @@ public interface DeptService {
     void deleteDept(int id);
 
     //根据条件查询部门
-    PageBean getDepts(Dept dept,Integer page, Integer pageSize);
+    PageBean getDepts(Dept dept, Integer page, Integer pageSize);
 }

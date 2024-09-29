@@ -1,9 +1,10 @@
 package com.exam.exam_assess_demo.service.impl;
 
-import com.exam.assess.mapper.VacationMapper;
-import com.exam.assess.pojo.PageBean;
-import com.exam.assess.pojo.Vacation;
-import com.exam.assess.service.VacationService;
+
+import com.exam.exam_assess_demo.mapper.VacationMapper;
+import com.exam.exam_assess_demo.pojo.PageBean;
+import com.exam.exam_assess_demo.pojo.Vacation;
+import com.exam.exam_assess_demo.service.VacationService;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;

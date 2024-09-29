@@ -1,6 +1,7 @@
 package com.exam.exam_assess_demo.mapper;
 
-import com.exam.assess.pojo.Vacation;
+
+import com.exam.exam_assess_demo.pojo.Vacation;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;

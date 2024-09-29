@@ -1,6 +1,6 @@
 package com.exam.exam_assess_demo.mapper;
 
-import com.exam.assess.pojo.Dept;
+import com.exam.exam_assess_demo.pojo.Dept;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;

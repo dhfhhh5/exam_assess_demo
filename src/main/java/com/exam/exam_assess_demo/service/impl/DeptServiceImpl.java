@@ -1,9 +1,10 @@
 package com.exam.exam_assess_demo.service.impl;
 
-import com.exam.assess.mapper.DeptMapper;
-import com.exam.assess.pojo.Dept;
-import com.exam.assess.pojo.PageBean;
-import com.exam.assess.service.DeptService;
+
+import com.exam.exam_assess_demo.mapper.DeptMapper;
+import com.exam.exam_assess_demo.pojo.Dept;
+import com.exam.exam_assess_demo.pojo.PageBean;
+import com.exam.exam_assess_demo.service.DeptService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,7 +38,7 @@ public class DeptServiceImpl implements DeptService {
 
     //分页条件查询
     @Override
-    public PageBean getDepts(Dept dept,Integer page, Integer pageSize) {
+    public PageBean getDepts(Dept dept, Integer page, Integer pageSize) {
         PageHelper.startPage(page,pageSize);
         List<Dept> depts = deptMapper.selectDept(dept);
         PageInfo<Dept> pageInfo = new PageInfo<>(depts);

@@ -1,7 +1,8 @@
 package com.exam.exam_assess_demo.service;
 
-import com.exam.assess.pojo.PageBean;
-import com.exam.assess.pojo.Vacation;
+
+import com.exam.exam_assess_demo.pojo.PageBean;
+import com.exam.exam_assess_demo.pojo.Vacation;
 
 public interface VacationService {
     //新增请假

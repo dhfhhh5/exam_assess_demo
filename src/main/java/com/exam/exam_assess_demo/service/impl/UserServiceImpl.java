@@ -1,9 +1,10 @@
 package com.exam.exam_assess_demo.service.impl;
 
-import com.exam.assess.mapper.UserMapper;
-import com.exam.assess.pojo.PageBean;
-import com.exam.assess.pojo.User;
-import com.exam.assess.service.UserService;
+
+import com.exam.exam_assess_demo.mapper.UserMapper;
+import com.exam.exam_assess_demo.pojo.PageBean;
+import com.exam.exam_assess_demo.pojo.User;
+import com.exam.exam_assess_demo.service.UserService;
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import org.springframework.beans.factory.annotation.Autowired;

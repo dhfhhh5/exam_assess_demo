@@ -1,6 +1,6 @@
 package com.exam.exam_assess_demo.exception;
 
-import com.exam.assess.pojo.Result;
+import com.exam.exam_assess_demo.pojo.Result;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 

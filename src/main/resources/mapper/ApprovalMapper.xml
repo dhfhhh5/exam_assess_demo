@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exam.assess.mapper.ApprovalMapper">
+
+    <insert id="insertApproval">
+        insert into approval ( vacation_id) values (#{approval.userId})
+    </insert>
+    <!--更新approval表-->
+    <update id="updateApproval">
+        update approval
+        <set>
+            <if test="approval.userId!=null">user_id=#{approval.userId},</if>
+            <if test="approval.approvalTime!=null and approval.approvalTime!='' ">approval_time=#{approval.approvalTime},</if>
+            <if test="approval.opinion!=null and approval.opinion!='' ">opinion=#{approval.opinion},</if>
+        </set>
+        where id=#{approval.id}
+    </update>
+    <!--条件查询approval-->
+    <select id="selectApproval" resultType="com.exam.assess.pojo.Approval">
+        select * from approval 
+        <where>
+            <if test="approval.vacationId!=null">vacation_id=#{approval.vacationId}</if>
+            <if test="approval.userId!=null">user_id=#{approval.userId}</if>
+        </where>
+    </select>
+    <!--展示列表查询-->
+    <select id="list" resultMap="AppVa">
+        select a.id as id,a.vacation_id, a.user_id as user_id, a.approval_time,
+        a.opinion, v.id as v_id, v.type, v.status, v.start_time, v.end_time, v.create_time, v.user_id as u_id
+        from approval a 
+        left join vacation v 
+        on a.vacation_id=v.id
+        <where>
+            <if test="type!=null">type=#{type}</if>
+            <if test="userId!=null">v.user_id=#{userId}</if>
+            <if test="id!=null">a.id=#{id}</if>
+        </where>
+    </select>
+
+    <!-- 定义一个resultMap -->
+    <resultMap id="AppVa" type="com.exam.assess.pojo.ApprovalVacation">
+        <!--主键映射-->
+        <id column="id" property="id"></id>
+        <!--普通字段映射-->
+        <result column="vacation_id" property="vacationId"></result>
+        <result column="user_id" property="userId"></result>
+        <result column="approval_time" property="approvalTime"></result>
+        <result column="opinion" property="opinion"></result>
+        <association property="vacation" javaType="com.exam.assess.pojo.Vacation">
+            <id column="v_id" property="id"></id>
+            <result column="u_id" property="userId"></result>
+            <result column="type" property="type"></result>
+            <result column="start_time" property="startTime"></result>
+            <result column="end_time" property="endTime"></result>
+            <result column="create_time" property="createTime"></result>
+            <result column="status" property="status"></result>
+        </association>
+    </resultMap>
+</mapper>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exam.assess.mapper.VacationMapper">
+
+    <insert id="insertVacation">
+        insert into vacation  (user_id, type, start_time, end_time, create_time, status)
+        VALUES (#{vacation.userId},#{vacation.type},#{vacation.startTime},#{vacation.endTime},now(),#{vacation.status})
+    </insert>
+    
+    <update id="updateVacation">
+        update vacation
+        <set>
+            <if test="vacation.status!=null">status=#{vacation.status}</if>
+            <if test="vacation.type!=null">type=#{vacation.type}</if>
+            <if test="vacation.startTime!=null and vacation.startTime!='' ">start_time=#{vacation.startTime}</if>
+            <if test="vacation.endTime!=null and vacation.endTime!=''">end_time=#{vacation.endTime}</if>
+        </set>
+        where id = #{vacation.id}
+    </update>
+    
+    <select id="selectVacation" resultType="com.exam.assess.pojo.Vacation">
+        select * from vacation
+        <where>
+            <if test="vacation.userId!=null"> user_id=#{vacation.userId}</if>
+            <if test="vacation.type!=null"> type=#{vacation.type}</if>
+            <if test="vacation.status!=null"> status=#{vacation.status}</if>
+        </where>
+    </select>
+</mapper>
+
+
